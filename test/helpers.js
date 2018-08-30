@@ -17,5 +17,5 @@ const babelResult = babel.transformFileSync(
 const src = babelResult.code
 
 jsdom({
-  html, src
+  html, src, url: 'http://localhost/'
 });
