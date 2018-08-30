@@ -10,20 +10,32 @@ function nestedTarget() {
 }
 
 function increaseRankBy(n) {
-  let lis =
-  document.getElementById('app').querySelectorAll('.ranked-list li');
-  for (let i = 0; i < lis.length; i++) {
-    let temp = lis[i].innerHTML;
-    lis[i].innerHTML = parseInt(temp) + n;
-  }
+  // solution 1
+  // let lis =
+  // document.getElementById('app').querySelectorAll('.ranked-list li');
+  // for (let i = 0; i < lis.length; i++) {
+  //   let temp = lis[i].innerHTML;
+  //   lis[i].innerHTML = parseInt(temp) + n;
+  // }
+
+  // solution 2
+  let lis = document.querySelectorAll('.ranked-list');
+  return lis.forEach(function(li){
+    return li.innerHTML = parseInt(li.innerHTML) + 1
+  });
 }
 
 function deepestChild() {
-  let lis = document.querySelector('#grand-node');
-  while(lis.querySelector('div') !== null){ //keep looping until div doesn't include any div child
+  // solution 1
+  // let lis = document.querySelector('#grand-node');
+  // while(lis.querySelector('div') !== null){ //keep looping until div doesn't include any div child
+  //
+  //   lis = lis.querySelector('div'); // go to the next div level
+  // } return lis;
 
-    lis = lis.querySelector('div'); // go to the next div level
-  } return lis;
+  // solution 2
+  let divs = document.querySelectorAll('#grand-node div');
+  return divs[divs.length -1];
 }
 
 
